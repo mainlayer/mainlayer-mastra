@@ -22,12 +22,20 @@ Give your Mastra agents the ability to discover, pay for, and monetize AI-access
 npm install @mainlayer/mastra @mastra/core zod
 ```
 
+> **Note**: `@mainlayer/mastra` is an official integration maintained by Mainlayer. Learn more at [mainlayer.fr](https://mainlayer.fr).
+
+### Prerequisites
+
+- **Node.js** 20+ (or latest LTS)
+- A **Mainlayer API key** from [app.mainlayer.fr](https://app.mainlayer.fr)
+- A Mastra-compatible LLM (OpenAI, Anthropic, etc.)
+
 ### Peer dependencies
 
-| Package | Version |
-|---------|---------|
-| `@mastra/core` | `>=0.1.0` |
-| `zod` | `>=3.0.0` |
+| Package | Version | Purpose |
+|---------|---------|---------|
+| `@mastra/core` | `>=0.1.0` | Mastra agent framework |
+| `zod` | `>=3.0.0` | Runtime input/output validation |
 
 ---
 
@@ -246,31 +254,34 @@ await client.getRevenue({ periodStart?, periodEnd? })
 
 ## Examples
 
-Three runnable examples are included in the `examples/` directory.
+Three runnable examples are included in the `examples/` directory. Set `MAINLAYER_API_KEY` before running.
 
-### Vendor agent — monetize a service
+### 1. Monetized workflow
 
 ```bash
-MAINLAYER_API_KEY=<key> npx tsx examples/vendor-agent.ts
+MAINLAYER_API_KEY=ml_live_... npx tsx examples/monetized-workflow.ts
+```
+
+Demonstrates an end-to-end workflow: create a resource, discover it, pay for it, and verify access.
+Shows error handling, payment retries, and revenue tracking.
+
+### 2. Vendor agent — monetize a service
+
+```bash
+MAINLAYER_API_KEY=ml_live_... npx tsx examples/vendor-agent.ts
 ```
 
 Demonstrates: creating a resource, checking revenue, scouting competition.
+Use this as a template for building monetized AI services.
 
-### Buyer agent — pay for services
+### 3. Buyer agent — pay for services
 
 ```bash
-MAINLAYER_API_KEY=<key> npx tsx examples/buyer-agent.ts
+MAINLAYER_API_KEY=ml_live_... npx tsx examples/buyer-agent.ts
 ```
 
 Demonstrates: discovering resources, checking existing access, paying for access.
-
-### Workflow — orchestrated payment pipeline
-
-```bash
-MAINLAYER_API_KEY=<key> npx tsx examples/workflow.ts
-```
-
-Demonstrates a four-step Mastra workflow: discover → check access → pay → verify.
+Use this as a template for agents that consume paid services.
 
 ---
 
