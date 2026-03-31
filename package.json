@@ -1,0 +1,59 @@
+{
+  "name": "@mainlayer/mastra",
+  "version": "1.0.0",
+  "description": "Mastra TypeScript agent framework integration for Mainlayer — Stripe for AI agents",
+  "keywords": [
+    "mainlayer",
+    "mastra",
+    "ai-agents",
+    "payments",
+    "monetization",
+    "llm",
+    "typescript"
+  ],
+  "homepage": "https://mainlayer.xyz",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mainlayer/mainlayer-mastra"
+  },
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "lint": "eslint src tests examples --ext .ts",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "zod": "^3.23.0"
+  },
+  "peerDependencies": {
+    "@mastra/core": ">=0.1.0"
+  },
+  "devDependencies": {
+    "@ai-sdk/openai": "^0.0.66",
+    "@mastra/core": "^0.1.0",
+    "@types/node": "^22.0.0",
+    "@vitest/coverage-v8": "^2.0.0",
+    "typescript": "^5.5.0",
+    "vitest": "^2.0.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}
