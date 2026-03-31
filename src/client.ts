@@ -1,10 +1,10 @@
 /**
  * HTTP client for the Mainlayer API.
- * Base URL: https://api.mainlayer.xyz
+ * Base URL: https://api.mainlayer.fr
  * Auth: Authorization: Bearer <api_key>
  */
 
-export const MAINLAYER_BASE_URL = 'https://api.mainlayer.xyz'
+export const MAINLAYER_BASE_URL = 'https://api.mainlayer.fr'
 
 export interface MainlayerClientConfig {
   apiKey: string

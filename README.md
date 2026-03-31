@@ -1,6 +1,6 @@
 # @mainlayer/mastra
 
-Mastra TypeScript agent framework integration for [Mainlayer](https://mainlayer.xyz) — Stripe for AI agents.
+Mastra TypeScript agent framework integration for [Mainlayer](https://mainlayer.fr) — Stripe for AI agents.
 
 Give your Mastra agents the ability to discover, pay for, and monetize AI-accessible resources with a single npm package.
 
@@ -311,4 +311,4 @@ MIT — see [LICENSE](./LICENSE) for details.
 
 ---
 
-Built for [Mainlayer](https://mainlayer.xyz) — payments infrastructure for AI agents.
+Built for [Mainlayer](https://mainlayer.fr) — payments infrastructure for AI agents.
